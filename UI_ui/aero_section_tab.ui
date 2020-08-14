@@ -41,7 +41,7 @@
             <item>
              <widget class="QPushButton" name="import_aero_buttom_2">
               <property name="text">
-               <string>import_aero</string>
+               <string>import_polar</string>
               </property>
              </widget>
             </item>

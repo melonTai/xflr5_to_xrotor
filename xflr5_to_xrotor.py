@@ -25,8 +25,19 @@ class TabSection(QtWidgets.QTabWidget, Ui_section, Slot_Section):
         self.conectSlot()
 
     def connectSlot(self):
+        # 各種入力値を取得
         self.import_aero_buttom_2.clicked,connect(self.importPolar)
-        self.input_aerofile_path_lineEdit.editingFinished.connect(self.validate_input)
+        self.input_aerofile_path_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.dcl_dalpha_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.dcl_dalpha_at_stall_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.max_cl_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.min_cl_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.cl_increment_to_stall_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.min_cd_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.cl_at_min_cd_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.re_lineEdit.editingFinished.connect(self.getLineInputs)
+
+        # 
 
 
 # メインウィンドウ

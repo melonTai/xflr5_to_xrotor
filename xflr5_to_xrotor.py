@@ -25,6 +25,11 @@ class MplCanvas(FigureCanvas):
         self.axes1 = fig.add_subplot(121)
         self.axes2 = fig.add_subplot(122)
         super(MplCanvas, self).__init__(fig)
+        self.plotted_line1 = None
+        self.plotted_scatter1 = None
+        self.plotted_scatter2 = None
+        self.plotted_line2_1 = None
+        self.plotted_line2_2 = None
 
 # タブの要素
 class TabSection(QtWidgets.QTabWidget, Ui_section, Slot_Section):

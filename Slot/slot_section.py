@@ -22,22 +22,29 @@ class Slot_Section(object):
 
     # グラフアップデート
     def update_plot(self):
+        if self.canvas.plotted_line1 is not None:
+            self.canvas.plotted_line1.remove()
+        if self.canvas.plotted_line2_1 is not None:
+            self.canvas.plotted_line2_1.remove()
+        if self.canvas.plotted_line2_2 is not None:
+            self.canvas.plotted_line2_2.remove()
+        if self.canvas.plotted_scatter1 is not None:
+            self.canvas.plotted_scatter1.remove()
+        if self.canvas.plotted_scatter2 is not None:
+            self.canvas.plotted_scatter2.remove()
+
         self.cl_model = np.linspace(self.min_cl,self.max_cl,100)
         self.cd_model = [self.min_cd + self.dcd_ddcl*(self.cl_at_min_cd - y)**2 for y in self.cl_model]
-        self.canvas.axes1.cla()  # Clear the canvas.
-        self.canvas.axes1.plot(self.cd_model, self.cl_model, 'r')
-        self.canvas.axes1.scatter(self.cd_list, self.cl_list)
-        self.canvas.axes1.autoscale()
+        self.canvas.plotted_line1, = self.canvas.axes1.plot(self.cd_model, self.cl_model, 'r')
+        self.canvas.plotted_scatter1 = self.canvas.axes1.scatter(self.cd_list, self.cl_list,c = 'b')
 
         self.alpha_model = [x for x in np.linspace(self.alpha_list[0],self.alpha_list[-1],100,endpoint=True) if self.min_cl <= self.dcl_dalpha*(x-self.zero_lift_alpha*math.pi/180) and self.dcl_dalpha*(x-self.zero_lift_alpha*math.pi/180) <= self.max_cl]
         self.cl_model2 = [self.dcl_dalpha*(x-self.zero_lift_alpha*math.pi/180) for x in self.alpha_model]
         self.cl_model_stall = np.linspace(self.max_cl, self.max_cl+self.cl_increment_to_stall, 50)
         self.alpha_model_stall = [(y - self.max_cl)/self.dcl_dalpha_stall + self.alpha_model[-1] for y in self.cl_model_stall]
-        self.canvas.axes2.cla()  # Clear the canvas.
-        self.canvas.axes2.plot(self.alpha_model, self.cl_model2, 'r')
-        self.canvas.axes2.plot(self.alpha_model_stall, self.cl_model_stall, 'g')
-        self.canvas.axes2.scatter(self.alpha_list, self.cl_list)
-        #self.canvas.axes1.autoscale()
+        self.canvas.plotted_line2_1, = self.canvas.axes2.plot(self.alpha_model, self.cl_model2, 'r')
+        self.canvas.plotted_line2_2, = self.canvas.axes2.plot(self.alpha_model_stall, self.cl_model_stall, 'g')
+        self.canvas.plotted_scatter2 = self.canvas.axes2.scatter(self.alpha_list, self.cl_list, c = 'b')
 
         # Trigger the canvas to update and redraw.
         self.canvas.draw()

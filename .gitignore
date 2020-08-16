@@ -1,1 +1,10 @@
 xflr_to_xrot_v0.py
+build/
+images/
+include/
+__pycache__/
+Lib/
+Scripts/
+pyvenv.cfg
+fname
+aero_output.txt

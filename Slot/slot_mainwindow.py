@@ -1,13 +1,16 @@
 from PyQt5 import QtGui, QtWidgets, QtCore
 
 class Slot_MainWindow(object):
+    # タブにページ追加
     def addSection(self,Section):
         section = Section()
         self.aero_sections.addTab(section,str(self.aero_sections.count() + 1))
 
+    # タブからページ削除
     def delSection(self):
         self.aero_sections.removeTab(self.aero_sections.currentIndex())
 
+    # xrotorのaeroファイル作成
     def build(self):
         count = self.aero_sections.count()
         output_aero_data = ''
@@ -26,5 +29,6 @@ class Slot_MainWindow(object):
             output_aero_data += " ====================================================================\n"
 
         fname = QtWidgets.QFileDialog.getSaveFileName(self, "Save File","/home")[0];
-        with open(fname, mode='w') as f:
-            f.write(output_aero_data)
+        if fname != '':
+            with open(fname, mode='w') as f:
+                f.write(output_aero_data)

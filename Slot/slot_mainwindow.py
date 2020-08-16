@@ -17,7 +17,7 @@ class Slot_MainWindow(object):
         for i in range(count):
             section = self.aero_sections.widget(i)
             output_aero_data += "\n"
-            output_aero_data += " Section "+str(i)+"   r/R = "+str(section.r_R)+"\n"
+            output_aero_data += " Section "+str(i+1)+"   r/R = "+str(section.r_R)+"\n"
             output_aero_data += " ====================================================================\n"
             output_aero_data += " Zero-lift alpha (deg):  {zero_lift_alpha:.2f}        Minimum Cd            : {min_Cd:.4f}\n".format(zero_lift_alpha = section.zero_lift_alpha,min_Cd = section.min_cd)
             output_aero_data += " d(Cl)/d(alpha)       :  {:.3f}".format(section.dcl_dalpha)+"        Cl at minimum Cd     : {:.3f}\n".format(section.cl_at_min_cd)

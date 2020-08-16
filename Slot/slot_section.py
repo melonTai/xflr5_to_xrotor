@@ -37,7 +37,7 @@ class Slot_Section(object):
         self.canvas.axes2.plot(self.alpha_model, self.cl_model2, 'r')
         self.canvas.axes2.plot(self.alpha_model_stall, self.cl_model_stall, 'g')
         self.canvas.axes2.scatter(self.alpha_list, self.cl_list)
-        self.canvas.axes1.autoscale()
+        #self.canvas.axes1.autoscale()
 
         # Trigger the canvas to update and redraw.
         self.canvas.draw()
@@ -46,7 +46,6 @@ class Slot_Section(object):
     def CalculateModel(self):
         def getCloseIndex(t,s):
             delta = [abs(i-s) for i in t]
-            print(delta)
             return delta.index(min(delta))
 
         #ポーラーファイルからレイノルズ数を読み取る

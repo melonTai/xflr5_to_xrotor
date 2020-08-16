@@ -1,5 +1,5 @@
 # 概要
-distフォルダにexeファイル同封
+distフォルダにexe有
 
 翼型解析ソフト[xflr5](http://www.xflr5.tech/xflr5.htm)の解析結果(polarファイル)からCl_alpha,Cl_Cdグラフの近似モデルを作成し、プロペラ設計ソフト[xrotor](http://web.mit.edu/drela/Public/web/xrotor/)のaeroファイルを出力するプログラム
 
@@ -194,3 +194,6 @@ xrotorのaeroと入力内容はほとんど同じ。(http://web.mit.edu/drela/Pu
 ![model](./images/model.jpg)
 
 ![formula](./images/formula.jpg)
+
+## 4. aeroファイル作成
+値を調整して、近似を修正したら、buildボタンでxrotorのaeroファイルを作成する。

@@ -1,10 +1,12 @@
 xflr_to_xrot_v0.py
 build/
-images/
 include/
 __pycache__/
 Lib/
 Scripts/
+Slot/__pycache__
+UI_py/__pycache__
 pyvenv.cfg
 fname
 aero_output.txt
+xflr5_to_xrotor.spec

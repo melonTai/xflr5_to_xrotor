@@ -183,7 +183,6 @@ class Ui_section(object):
         self.cl_increment_to_stall_label.setText(_translate("section", "Cl increment to stall"))
         self.min_cd_label.setText(_translate("section", "Minimum Cd"))
         self.cl_at_min_cd_label.setText(_translate("section", "Cl at minimum Cd"))
-        self.dcd_ddcl_label.setText(_translate("section", " d(Cd)/d(Cl**2)"))
+        self.dcd_ddcl_label.setText(_translate("section", "d(Cd)/d(Cl**2)"))
         self.re_label.setText(_translate("section", "Reference Re number"))
         self.r_R_label.setText(_translate("section", "r/R"))
-

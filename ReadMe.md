@@ -168,8 +168,6 @@ xflr5_to_xrotorを起動し、先ほどエクスポートしたファイルを�
 - ![insight](./images/insight.jpg) : プロット範囲、色、太さ等指定
 - ![save](./images/save.jpg) : グラフ画像保存
 
-![demo_graph](./images/demo_graph.gif)
-
 ### 3-2. 入力値
 近似モデルを作るためのパラメータ。
 

@@ -79,7 +79,7 @@ Scripts\activate
 
 以下デモ動画では、DAE-51をエクスポートしている。
 
-![export_polar](./images/export_polar.gif)
+![export_polar](./images/export_polar2.gif)
 
 エクスポートしたファイルの内容が以下のようになっていることを確認する。
 
@@ -144,14 +144,16 @@ xflr5_to_xrotorを起動し、先ほどエクスポートしたファイルを�
 
 以下デモ動画参照
 
-![import_polar](./images/import_polar.gif)
+![import_polar](./images/import_polar2.gif)
 
 ## 3. 近似の修正
 自動的に生成された近似のうち気に入らないところを修正する。
 
 グラフを拡大して、赤、緑の線が青い点に近似できているかを確認し、不十分であれば、入力値を修正する。
 
-以下、グラフ操作、入力値で詳細を説明する。
+![fix_demo](./images/fix_demo.gif)
+
+以下で、グラフの操作方法と入力値の詳細を示す。
 
 ### 3-1. グラフ操作
 左上の各種ツールアイコンでグラフの操作可能
@@ -196,4 +198,6 @@ xrotorのaeroと入力内容はほとんど同じ。(http://web.mit.edu/drela/Pu
 ![formula](./images/formula.jpg)
 
 ## 4. aeroファイル作成
-値を調整して、近似を修正したら、buildボタンでxrotorのaeroファイルを作成する。
+すべての翼型の設定が終わったら、buildボタンでxrotorのaeroファイルを作成する。
+
+![build](./images/build_demo.gif)

@@ -64,6 +64,7 @@ class TabSection(QtWidgets.QTabWidget, Ui_section, Slot_Section):
         self.import_aero_buttom_2.clicked.connect(self.importPolar)
         self.import_aero_buttom_2.clicked.connect(self.CalculateModel)
         self.input_aerofile_path_lineEdit.editingFinished.connect(self.getLineInputs)
+        self.zero_lift_alpha_lineEdit.editingFinished.connect(self.getLineInputs)
         self.dcl_dalpha_lineEdit.editingFinished.connect(self.getLineInputs)
         self.dcl_dalpha_at_stall_lineEdit.editingFinished.connect(self.getLineInputs)
         self.max_cl_lineEdit.editingFinished.connect(self.getLineInputs)

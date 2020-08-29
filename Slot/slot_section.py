@@ -158,7 +158,6 @@ class Slot_Section(object):
         elif line is self.dcd_ddcl_lineEdit:
             if self.is_float(line.text()):
                 self.dcd_ddcl = float(line.text())
-                print("dcd_ddcl")
             else:
                 line.setText('Error')
         self.update_plot()
